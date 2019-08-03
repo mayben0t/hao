@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="third.world.hao.mapper.QuanWeiMapper">
+    <insert id="insert" parameterType="third.world.hao.model.QuanWei">
+        insert into quanwei(title,content)
+        values (#{quanWei.name},#{quanWei.content})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from quanwei
+        where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="third.world.hao.model.QuanWei">
+        update quanwei
+        set title = #{quanwei.name}
+        and content = #{quanwei.content}
+        where id = #{id}
+    </update>
+
+    <select id="getAll" resultType="third.world.hao.model.QuanWei">
+        select * from quanwei
+    </select>
+
+</mapper>

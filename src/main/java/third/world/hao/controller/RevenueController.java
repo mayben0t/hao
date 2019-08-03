@@ -45,6 +45,7 @@ public class RevenueController {
     }
 
     @PostMapping("/delete")
+    @ApiOperation(value="税收信息删除", notes="删除",produces = "application/json")
     public ResultTO delete(int id){
 //        Assert
         revenueService.delete(id);
@@ -52,6 +53,7 @@ public class RevenueController {
     }
 
     @GetMapping("/getInfo")
+    @ApiOperation(value="税收信息 信息查询", notes="信息查询",produces = "application/json")
     public ResultTO getInfo(Integer month,Integer beforeSalary,Double sumSalary,Double fiveMoney,Double sumFive,Double zhuanMoney,Double sumZhuan,Double leiJiao){
        return new ResultTO(count.getData(month,beforeSalary,sumSalary,fiveMoney,sumFive,zhuanMoney,sumZhuan,leiJiao));
 //        return null;
